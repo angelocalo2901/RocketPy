@@ -707,6 +707,8 @@ class Fins(AeroSurface):
         corrector_factor = [2.37, 2.74, 2.99, 3.24]
         if n >= 5 and n <= 8:
             return corrector_factor[n - 5]
+        elif n == 2 or n == 1:
+            return 1
         else:
             return n / 2
 
