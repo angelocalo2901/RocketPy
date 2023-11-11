@@ -36,15 +36,18 @@ Pro75M1670 = SolidMotor(
 
 Pro75M1670.info()
 
+power_off_drag_completo = "data/calisto/powerOffDragCurve_completo.csv"
+
 calisto = Rocket(
     radius=127 / 2000,
     mass=14.426,
     inertia=(6.321, 6.321, 0.034),
-    power_off_drag="data/calisto/powerOffDragCurve.csv",
+    power_off_drag=power_off_drag_completo,
     power_on_drag="data/calisto/powerOnDragCurve.csv",
     center_of_mass_without_motor=0,
     coordinate_system_orientation="tail_to_nose",
 )
+calisto.power_off_drag()
 
 calisto.add_motor(Pro75M1670, position=-1.255)
 
@@ -100,4 +103,4 @@ test_flight.speed.plot(0, test_flight.apogee_time)
 
 test_flight.speed.source
 
-test_flight.all_info()
+#test_flight.all_info()
